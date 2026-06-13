@@ -143,3 +143,14 @@ FROM
   bookings
 WHERE
   payment_status IS NULL;
+
+-- Query-4
+SELECT
+  booking_id,
+  full_name,
+  fixture,
+  total_cost
+FROM
+  bookings
+  INNER JOIN users USING (user_id)
+  INNER JOIN matches USING (match_id);
