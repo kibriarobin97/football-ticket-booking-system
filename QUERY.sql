@@ -130,5 +130,16 @@ SELECT
 FROM
   users
 WHERE
-  full_name ILIKE 'Tanvir%'
-  OR full_name ILIKE '%Haque%';
+  full_name ILIKE 'tanvir%'
+  OR full_name ILIKE '%haque%';
+
+-- Query-3
+SELECT
+  booking_id,
+  user_id,
+  match_id,
+  coalesce(payment_status, 'Action Required') AS systematic_status
+FROM
+  bookings
+WHERE
+  payment_status IS NULL;
